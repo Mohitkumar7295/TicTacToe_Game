@@ -38,10 +38,6 @@ MySQL Database
 
 JDBC (MySQL Connector/J)
 
-📦 Setup & Installation
-1. Clone repository
-git clone https://github.com/your-username/tictactoe-ai.git
-cd tictactoe-ai
 
 2. Configure MySQL
 
