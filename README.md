@@ -94,3 +94,27 @@ Tracks wins, losses, draws
 Shows recent 10 matches
 
 Shows total players in DB
+sql code
+-- Minimal version
+CREATE DATABASE IF NOT EXISTS tictactoe_db;
+USE tictactoe_db;
+
+CREATE TABLE IF NOT EXISTS game_stats (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    player_name VARCHAR(50) NOT NULL,
+    game_mode VARCHAR(20) NOT NULL,
+    difficulty VARCHAR(10),
+    player_symbol CHAR(1),
+    result VARCHAR(10) NOT NULL,
+    play_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS player_stats (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    player_name VARCHAR(50) UNIQUE NOT NULL,
+    total_games INT DEFAULT 0,
+    wins INT DEFAULT 0,
+    losses INT DEFAULT 0,
+    draws INT DEFAULT 0,
+    last_played TIMESTAMP
+);
